@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Economics Job Market — Personal Website</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FDFCFB;
+    --ink:#17171A;
+    --muted:#5C5E5A;
+    --rule:#E3E1DB;
+    --accent:#1F4E5F;
+    --flag:rgba(31,78,95,.10);
+    --flag-line:rgba(31,78,95,.45);
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#15171A;
+      --ink:#E9E7E2;
+      --muted:#9A9C97;
+      --rule:#2A2E33;
+      --accent:#8CBCC8;
+      --flag:rgba(140,188,200,.14);
+      --flag-line:rgba(140,188,200,.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#15171A;
+    --ink:#E9E7E2;
+    --muted:#9A9C97;
+    --rule:#2A2E33;
+    --accent:#8CBCC8;
+    --flag:rgba(140,188,200,.14);
+    --flag-line:rgba(140,188,200,.5);
+  }
+  *,*::before,*::after{box-sizing:inherit}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Source Serif 4",Georgia,"Times New Roman",serif;
+    font-size:18px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:46rem;margin:0 auto;padding:clamp(2.5rem,6vw,4.5rem) clamp(1.25rem,5vw,2rem) 5rem}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
+  a:hover{border-bottom-color:var(--accent)}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  /* Header */
+  h1{
+    font-size:clamp(2.1rem,6.5vw,3rem);
+    line-height:1.06;
+    font-weight:600;
+    letter-spacing:-.015em;
+    margin:0 0 .6rem;
+  }
+  .standfirst{margin:0;color:var(--muted);font-size:1.05rem}
+  .fields{margin:.35rem 0 0;color:var(--muted);font-size:1.05rem}
+  .meta{
+    font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:.86rem;
+    line-height:1.5;
+  }
+  .toplinks{margin:1.6rem 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.35rem 1.4rem}
+  .toplinks a{border-bottom-width:1px}
+
+  /* Headline paper */
+  .jmp{
+    margin:3rem 0 0;
+    padding-left:1.15rem;
+    border-left:3px solid var(--accent);
+  }
+  .jmp .kicker{
+    font-family:Inter,system-ui,sans-serif;
+    font-size:.8rem;
+    color:var(--muted);
+    margin:0 0 .35rem;
+    letter-spacing:.01em;
+  }
+  .jmp h2{
+    font-size:clamp(1.35rem,3.6vw,1.6rem);
+    line-height:1.28;
+    font-weight:600;
+    margin:0 0 .5rem;
+  }
+  .abstract{margin:.75rem 0 0;color:var(--ink)}
+  .filelinks{margin:.9rem 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.35rem 1.2rem}
+
+  /* Sections */
+  section{margin-top:3.25rem;padding-top:1.4rem;border-top:1px solid var(--rule)}
+  section > h2{
+    font-size:1.12rem;
+    font-weight:600;
+    margin:0 0 1rem;
+    letter-spacing:.005em;
+  }
+  h3{font-size:1.02rem;font-weight:600;margin:1.6rem 0 .3rem}
+  h3:first-of-type{margin-top:0}
+  p{margin:0 0 1rem;max-width:64ch}
+  p:last-child{margin-bottom:0}
+
+  .entry{margin:0 0 1.6rem}
+  .entry:last-child{margin-bottom:0}
+  .entry .title{font-weight:600}
+  .entry .note{color:var(--muted);display:block}
+
+  ul.plain{margin:0;padding:0;list-style:none}
+  ul.plain li{margin:0 0 .85rem;padding-left:1.1rem;position:relative}
+  ul.plain li::before{
+    content:"";position:absolute;left:0;top:.72em;
+    width:.45rem;height:1px;background:var(--muted);
+  }
+  ul.plain li:last-child{margin-bottom:0}
+
+  .refs{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}
+  .refs div{margin:0}
+  .refs .who{font-weight:600}
+
+  footer{
+    margin-top:3.25rem;padding-top:1.4rem;border-top:1px solid var(--rule);
+    color:var(--muted);
+  }
+
+  /* Fill-in markers */
+  .tbd{
+    background:var(--flag);
+    border-bottom:1px dotted var(--flag-line);
+    padding:0 .15em;
+    border-radius:2px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1><span class="tbd">[Full Name]</span></h1>
+    <p class="standfirst">Ph.D. Candidate in Economics, <span class="tbd">[University]</span>. On the job market <span class="tbd">[2026–27]</span>.</p>
+    <p class="fields">Labor economics · Applied microeconomics · Public economics · Economics of education</p>
+    <ul class="toplinks meta">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#cv" class="tbd">CV (PDF)</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <div class="jmp">
+    <p class="kicker">Job market paper</p>
+    <h2>The Impact of Unemployment Duration on Subsequent Wages: Evidence from Bunching</h2>
+    <p class="abstract"><span class="tbd">[Abstract — 120–180 words. State the question, the source of variation you use, the main estimate, and what it implies. Keep it readable for a non-specialist on a hiring committee.]</span></p>
+    <ul class="filelinks meta">
+      <li><a href="#" class="tbd">Paper (PDF)</a></li>
+      <li><a href="#" class="tbd">Slides</a></li>
+    </ul>
+  </div>
+
+  <section id="research">
+    <h2>Research</h2>
+
+    <h3>Work in progress</h3>
+    <div class="entry">
+      <span class="title tbd">[Occupational Specialization and Wages — working title]</span>
+      <span class="note meta">Measures specialization through unusual skill combinations using O*NET, combined with NLSY ability measures and CPS panel data.</span>
+    </div>
+    <div class="entry">
+      <span class="title tbd">[Third project — title]</span>
+      <span class="note meta tbd">[One sentence: question and data.]</span>
+    </div>
+
+    <h3>Research interests</h3>
+    <p><span class="tbd">[Two or three sentences tying the projects together — the common question and the empirical approach — rather than listing them again. This is the paragraph a committee member reads to decide whether you have an agenda or a set of papers.]</span></p>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching</h2>
+
+    <h3>Instructor of record</h3>
+    <ul class="plain">
+      <li>Advanced Mathematical Analysis for Economists <span class="note meta tbd">[term(s), enrollment]</span></li>
+      <li>Financial Economics <span class="note meta tbd">[term(s), enrollment]</span></li>
+    </ul>
+
+    <h3>Teaching assistant</h3>
+    <ul class="plain">
+      <li>Principles of economics; intermediate theory; econometrics and statistics; graduate coursework <span class="note meta tbd">[terms]</span></li>
+    </ul>
+
+    <h3>Prepared to teach</h3>
+    <p>Labor economics (undergraduate and graduate), principles of economics, intermediate microeconomics and macroeconomics, and mathematics for economists.</p>
+    <p class="meta"><a href="#" class="tbd">Teaching statement (PDF)</a></p>
+  </section>
+
+  <section id="cv">
+    <h2>CV</h2>
+    <p><a href="#" class="tbd">Curriculum vitae (PDF)</a> — last updated <span class="tbd">[month, year]</span>.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><a href="#" class="tbd">[name@university.edu]</a><br>
+    <span class="tbd">[Department of Economics, University, mailing address]</span></p>
+
+    <h3>References</h3>
+    <div class="refs meta">
+      <div><span class="who tbd">[Advisor name]</span><br><span class="tbd">[title, institution]</span><br><span class="tbd">[email]</span></div>
+      <div><span class="who tbd">[Committee member]</span><br><span class="tbd">[title, institution]</span><br><span class="tbd">[email]</span></div>
+      <div><span class="who tbd">[Committee member]</span><br><span class="tbd">[title, institution]</span><br><span class="tbd">[email]</span></div>
+    </div>
+  </section>
+
+  <footer class="meta">
+    <p>Last updated <span class="tbd">[month, year]</span>.</p>
+  </footer>
+
+</div>
+</body>
+</html>
